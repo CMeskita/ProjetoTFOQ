@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "Cadastro";
+}
+
+<h2>Cadastro de Tipo de Mantimento</h2>
+<div class="form-group row">
+
+
+
+    <label>Nome</label>
+    <input type="text" id="nome" class="form-control" MaxLength="20" />
+
+
+
+    <label>Repor</label>
+    <input type="text" id="repor" class="form-control" MaxLength="1" />
+
+
+    <label>Tags</label>
+    <input type="text" id="tags" class="form-control" MaxLength="20"/>
+
+</div>
+
+<div class="form-group row">
+ 
+        <button onclick="Salvar()" type="button" class="btn btn-primary">SalVar</button>
+ 
+    
+  
+        <a href="/tipo/index" class="btn btn-primary">Voltar</a>
+ 
+   
+</div>
+
+<script>
+    function Salvar() {
+        var tipo = new Object();
+        tipo.NomeTipo = $('#nome').val();
+        tipo.Repor = $('#repor').val();
+        tipo.Tags = $('#tags').val();
+        $.ajax({
+            type: "POST",
+            url: "/tipo/Add",
+            data: tipo,
+            dataType: 'json',
+            success: function (obj) {
+                alert(obj);
+                location.href = '/tipo';
+            },
+            error: function (error) {
+
+            }
+        });
+    }
+
+</script>

@@ -1,0 +1,26 @@
+﻿@model ProjetoTfoq.Models.Tipo
+@{
+    ViewBag.Title = "Alterar";
+}
+
+<h2>Alterar Tipo de Mantimento</h2>
+<div class="form-group row">
+
+
+    <label>Nome</label>
+    <input readonly type="text" id="nome" class="form-control" MaxLength="20" value="@Model.NomeTipo" />
+
+    <label>Tags</label>
+    <input  readonly type="text" id="tags" class="form-control" MaxLength="20" value="@Model.Tags" />
+
+</div>
+
+<div class="form-group row">
+
+       <a href="/tipo/index" class="btn btn-primary">Voltar</a>
+
+
+</div>
+
+
+

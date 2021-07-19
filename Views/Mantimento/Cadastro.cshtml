@@ -1,0 +1,108 @@
+﻿
+@{
+    ViewBag.Title = "Cadastro";
+}
+
+<h2>Alterar Cadastro de Mantimentos</h2>
+<!-- Primeira-->
+<div class="form-group row">
+
+    <!-- Primeira Coluna-->
+    <div class="col-sm-6">
+        <label>Tipo</label>
+
+        <select class="form-control" id="tipo">
+            <option selected>Escolher</option>
+
+            @foreach (var item in ViewBag.Tipos)
+            {
+                <option value="@item.Id">@item.NomeTipo</option>
+            }
+
+        </select>
+
+    </div>
+    <!-- Segunda Coluna-->
+    <div class="col-sm-6">
+        <label>Marca</label>
+        <input type="text" id="marca" class="form-control" MaxLength="15" />
+    </div>
+
+
+</div>
+<!-- Segunda-->
+<div class="form-group row">
+
+    <!-- Primeira Coluna-->
+    <div class="col-sm-6">
+        <label>Validade</label>
+        <input type="text" id="marca" class="form-control" MaxLength="15" />
+    </div>
+    <!-- Segunda Coluna-->
+    <div class="col-sm-6">
+        <label>Capaciade</label>
+        <input onchange="CalculaPercentual()" type ="text" id="capacidade" class="form-control" MaxLength="15" />
+
+    </div>
+
+
+</div>
+<div class="form-group row">
+
+    <!-- Primeira Coluna-->
+    <div class="col-sm-6">
+        <label>Conteúso Atual</label>
+        <input type="text" id="conteudo" class="form-control" MaxLength="15" />
+    </div>
+    <!-- Segunda Coluna-->
+    <div class="col-sm-6">
+        <label>Percentual</label>
+        <input type="text" id="percentual" class="form-control" MaxLength="15" />
+    </div>
+
+
+</div>
+
+
+
+    <button onclick="Salvar()" type="button" class="btn btn-primary">SalVar</button>
+
+
+
+    <a href="/mantimento/index" class="btn btn-primary">Voltar</a>
+
+
+
+
+<script>
+    function Salvar() {
+        var mantimenoto = new Object();
+        mantimenoto.TipoId = $('#tipo').val();
+        mantimenoto.Marca = $('#marca').val();
+        mantimenoto.Validade = $('#validade').val();
+        mantimenoto.Capacidade = $('#capacidade').val();
+        mantimenoto.ConteudoAtual = $('#conteudo').val();
+        mantimenoto.Percentual = $('#percentual').val();
+        $.ajax({
+            type: "POST",
+            url: "/mantimento/Add",
+            data: tipo,
+            dataType: 'json',
+            success: function (obj) {
+                alert(obj);
+                location.href = '/mantimento';
+            },
+            error: function (error) {
+
+            }
+        });
+    }
+    function CalculaPercentual()
+    {
+        var capacidade = parseFloat($('#capacidade').val());
+        var conteudoAtual = parseFloat($('#conteudo').val());
+        var percentual = ((conteudoAtual / capacidade) * 100);
+        $('#percentual').val(percentual);
+
+    }
+</script>

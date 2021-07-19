@@ -1,0 +1,69 @@
+﻿
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<h2>Detalhes</h2>
+
+<div class="form-group row">
+
+    <!-- Primeira Coluna-->
+    <div class="col-sm-6">
+        <label>Tipo</label>
+
+        <select readonly class="form-control" id="tipo">
+            <option selected>Escolher</option>
+            <option>Nenhum</option>
+
+        </select>
+
+    </div>
+    <!-- Segunda Coluna-->
+    <div class="col-sm-6">
+        <label>Marca</label>
+        <input readonly type="text" id="marca" class="form-control" MaxLength="15" />
+    </div>
+
+
+</div>
+<!-- Segunda-->
+<div class="form-group row">
+
+    <!-- Primeira Coluna-->
+    <div class="col-sm-6">
+        <label>Validade</label>
+        <input readonly type="text" id="marca" class="form-control" MaxLength="15" />
+    </div>
+    <!-- Segunda Coluna-->
+    <div class="col-sm-6">
+        <label>Capaciade</label>
+        <input readonly type="text" id="marca" class="form-control" MaxLength="15" />
+    </div>
+
+
+</div>
+<div class="form-group row">
+
+    <!-- Primeira Coluna-->
+    <div class="col-sm-6">
+        <label>Conteúso Atual</label>
+        <input readonly type="text" id="conteudo" class="form-control" MaxLength="15" />
+    </div>
+    <!-- Segunda Coluna-->
+    <div class="col-sm-6">
+        <label>Percentual</label>
+        <input readonly type="text" id="percentual" class="form-control" MaxLength="15" />
+    </div>
+
+
+</div>
+
+<div class="form-group row">
+
+    <button onclick="Salvar()" type="button" class="btn btn-primary">SalVar</button>
+
+
+
+    <a href="/mantimento/index" class="btn btn-primary">Voltar</a>
+
+</div>

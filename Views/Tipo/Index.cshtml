@@ -1,0 +1,61 @@
+﻿@model List<ProjetoTfoq.Models.Tipo>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Lista de Tipo</h2>
+
+<table class="table table-striped table-hover">
+    <caption>Empresas Cadastradas</caption>
+    <thead>
+        <tr>
+            <td scope="col">Codigo</td>
+            <td scope="col">Nome</td>
+            <td scope="col">Repor</td>
+            <td scope="col">Tags</td>
+            <td><a class="success">Detalhes</a></td>
+            <td><a class="danger">Alterar</a></td>
+            <td><a class="warning">Excluir</a></td>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- index vai receber do controle uma lista de empresa e percorrer pela tabelas-->
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.NomeTipo</td>
+                <td>@item.Repor</td>
+                <td>@item.Tags</td>
+                <td><a href="/Tipo/Detalhes/@item.Id" class="success">Detalhes</a></td>
+                <td><a href="/Tipo/Alterar/@item.Id" class="danger">Alterar</a></td>
+
+                <td><a onclick="Excluir(@item.Id)" class="btn btn-warning ">Excluir</a></td>
+            </tr>
+        }
+
+    </tbody>
+   
+</table>
+<a href="/tipo/cadastro" class="btn btn-primary">Novo Tipo</a>
+<script>
+
+    function Excluir(id)
+    {
+        $.ajax({
+            type: "GET",
+            url: "/tipo/Delete/" + id,
+           
+            dataType: 'json',
+            success: function (obj) {
+                alert(obj);
+                location.href = '/tipo';
+            },
+            error: function (error) {
+                console.log(error)
+
+            }
+        });
+    }
+
+</script>
