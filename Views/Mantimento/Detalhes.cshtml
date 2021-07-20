@@ -1,4 +1,4 @@
-﻿
+﻿@model ProjetoTfoq.Models.Mantimento
 @{
     ViewBag.Title = "Detalhes";
 }
@@ -11,17 +11,14 @@
     <div class="col-sm-6">
         <label>Tipo</label>
 
-        <select readonly class="form-control" id="tipo">
-            <option selected>Escolher</option>
-            <option>Nenhum</option>
-
-        </select>
+        <input readonly class="form-control" id="tipo" value="@Model.TipoNome" />
+          
 
     </div>
     <!-- Segunda Coluna-->
     <div class="col-sm-6">
         <label>Marca</label>
-        <input readonly type="text" id="marca" class="form-control" MaxLength="15" />
+        <input readonly type="text" id="marca" class="form-control" MaxLength="15" value="@Model.Marca" />
     </div>
 
 
@@ -32,12 +29,12 @@
     <!-- Primeira Coluna-->
     <div class="col-sm-6">
         <label>Validade</label>
-        <input readonly type="text" id="marca" class="form-control" MaxLength="15" />
+        <input readonly type="text" id="marca" class="form-control" MaxLength="15" value="@Model.Validade" />
     </div>
     <!-- Segunda Coluna-->
     <div class="col-sm-6">
         <label>Capaciade</label>
-        <input readonly type="text" id="marca" class="form-control" MaxLength="15" />
+        <input readonly type="text" id="marca" class="form-control" MaxLength="15" value="@Model.Capacidade" />
     </div>
 
 
@@ -47,12 +44,12 @@
     <!-- Primeira Coluna-->
     <div class="col-sm-6">
         <label>Conteúso Atual</label>
-        <input readonly type="text" id="conteudo" class="form-control" MaxLength="15" />
+        <input readonly type="text" id="conteudo" class="form-control" MaxLength="15" value="@Model.ConteudoAtual" />
     </div>
     <!-- Segunda Coluna-->
     <div class="col-sm-6">
         <label>Percentual</label>
-        <input readonly type="text" id="percentual" class="form-control" MaxLength="15" />
+        <input readonly type="text" id="percentual" class="form-control" MaxLength="15" @Model.Precentual/>
     </div>
 
 

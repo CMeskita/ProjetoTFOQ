@@ -33,7 +33,9 @@
     <!-- Segunda Coluna-->
     <div class="col-sm-6">
         <label>Capaciade</label>
-        <input type="text" id="marca" class="form-control" MaxLength="15" @Model.Capacidade/>
+     
+        <input onchange="CalculaPercentual()" type="text" id="capacidade" class="form-control" MaxLength="15"  @Model.Capacidade />
+
     </div>
 
 
@@ -86,6 +88,13 @@
 
             }
         });
+    }
+    function CalculaPercentual() {
+        var capacidade = parseFloat($('#capacidade').val());
+        var conteudoAtual = parseFloat($('#conteudo').val());
+        var percentual = ((conteudoAtual / capacidade) * 100);
+        $('#percentual').val(percentual);
+
     }
 
 </script>

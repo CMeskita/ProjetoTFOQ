@@ -16,7 +16,7 @@
 
             @foreach (var item in ViewBag.Tipos)
             {
-                <option value="@item.Id">@item.NomeTipo</option>
+                <option value="@item.Id"> @item.NomeTipo</option>
             }
 
         </select>
@@ -36,7 +36,7 @@
     <!-- Primeira Coluna-->
     <div class="col-sm-6">
         <label>Validade</label>
-        <input type="text" id="marca" class="form-control" MaxLength="15" />
+        <input type="text" id="validade" class="form-control" MaxLength="15" />
     </div>
     <!-- Segunda Coluna-->
     <div class="col-sm-6">
@@ -51,7 +51,7 @@
 
     <!-- Primeira Coluna-->
     <div class="col-sm-6">
-        <label>Conteúso Atual</label>
+        <label>Conteúdo Atual</label>
         <input type="text" id="conteudo" class="form-control" MaxLength="15" />
     </div>
     <!-- Segunda Coluna-->
@@ -76,17 +76,17 @@
 
 <script>
     function Salvar() {
-        var mantimenoto = new Object();
-        mantimenoto.TipoId = $('#tipo').val();
-        mantimenoto.Marca = $('#marca').val();
-        mantimenoto.Validade = $('#validade').val();
-        mantimenoto.Capacidade = $('#capacidade').val();
-        mantimenoto.ConteudoAtual = $('#conteudo').val();
-        mantimenoto.Percentual = $('#percentual').val();
+        var mantimento = new Object();
+        mantimento.TipoId = $('#tipo').val();
+        mantimento.Marca = $('#marca').val();
+        mantimento.Validade = $('#validade').val();
+        mantimento.Capacidade = $('#capacidade').val();
+        mantimento.ConteudoAtual = $('#conteudo').val();
+        mantimento.Percentual = $('#percentual').val();
         $.ajax({
             type: "POST",
             url: "/mantimento/Add",
-            data: tipo,
+            data: mantimento,
             dataType: 'json',
             success: function (obj) {
                 alert(obj);

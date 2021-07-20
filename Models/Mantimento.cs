@@ -9,7 +9,8 @@ namespace ProjetoTfoq.Models
 {
     [Table("Mantimento")]
     public class Mantimento
-    {
+    {  
+        [Key]
         public int Id { get; set; }
         public string Marca { get; set; }
         public string Validade { get; set; }
