@@ -77,7 +77,7 @@
 <script>
     function Salvar() {
         var mantimento = new Object();
-        mantimento.TipoId = $('#tipo').val();
+        mantimento.TipoId = $('#tipo').val().find(":selected").text();
         mantimento.Marca = $('#marca').val();
         mantimento.Validade = $('#validade').val();
         mantimento.Capacidade = $('#capacidade').val();
