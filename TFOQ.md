@@ -1,10 +1,12 @@
 # ProjetoTFOQ
 O projeto desenvolvido utilizou os seguintes recursos:
 
-_ASP.NET MVC
-_Bootstrap
-_Font Awesome
-_Entity Framework
-_JQuery
-_Json
-_SQL Server
+<ul>
+<li>ASP.NET MVC</li>
+<li>Bootstrap</li>
+<li>Font Awesome</li>
+<li>Entity Framework</li>
+<li>JQuery</li>
+<li>Json</li>
+<li>SQL Server</li>
+</ul>
