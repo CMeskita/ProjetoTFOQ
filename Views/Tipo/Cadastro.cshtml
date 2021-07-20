@@ -46,8 +46,8 @@
     function Salvar() {
         var tipo = new Object();
         tipo.NomeTipo = $('#nome').val();
-        tipo.Repor = $('#repor').val();
-        tipo.Tags = $('#tags').val();
+         tipo.Tags = $('#tags').val();
+        $('#repor').prop('checked', true);
         $.ajax({
             type: "POST",
             url: "/tipo/Add",
