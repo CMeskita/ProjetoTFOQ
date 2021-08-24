@@ -10,16 +10,21 @@ namespace ProjetoTfoq.Models
     [Table("Tipo")]
     public class Tipo
     {//Criando Entidades no banco 1° Passo
-        [Key]
-        public int Id { get; set; }
-        [MaxLength(20)]
-        public string NomeTipo { get; set; }
+       
 
+        public int Id { get; set; }
+
+        [Column("nome", TypeName = "varchar")]
+        [MaxLength(100)]
+        public string Nome { get; set; }
+           
+        [Column("repor")]
         public bool Repor { get; set; }
 
-        [MaxLength(20)]
+        [Column("tags", TypeName = "varchar")]
+        [MaxLength(100)]
         public string Tags { get; set; }
 
-        public IEnumerable<Mantimento> Mantimentos { get; set; }
+        public virtual IList<Mantimento> Mantimentos { get; set; }
     }
 }

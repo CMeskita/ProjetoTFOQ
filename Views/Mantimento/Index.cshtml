@@ -1,6 +1,6 @@
 ﻿@Model @model List<ProjetoTfoq.Models.Mantimento>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Index Mantimento";
 }
 
 <h2>Index</h2>
@@ -26,11 +26,11 @@
         @foreach (var item in Model)
         {
         <tr>
-            <td>@item.Id>
-            <td>@item.TipoNome</td>
+            <td>@item.Id</td>
+            <td>@item.Tipo.Nome</td>
             <td>@item.Marca</td>
             <td>@item.Capacidade</td>
-            <td>@item.ConteudoAtual</td>
+            <td>@item.Conteudo</td>
             <td>@item.Precentual</td>
             <td><a href="/Mantimento/Detalhes/@item.Id" class="success">Detalhes</a></td>
             <td><a href="/Mantimento/Alterar/@item.Id" class="danger">Alterar</a></td>

@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "Cadastro";
+    ViewBag.Title = "Cadastro Mantimentos";
 }
 
 <h2>Alterar Cadastro de Mantimentos</h2>
@@ -16,7 +16,7 @@
 
             @foreach (var item in ViewBag.Tipos)
             {
-                <option value="@item.Id"> @item.NomeTipo</option>
+                <option value="@item.Id"> @item.Nome</option>
             }
 
         </select>
@@ -81,8 +81,9 @@
         mantimento.Marca = $('#marca').val();
         mantimento.Validade = $('#validade').val();
         mantimento.Capacidade = $('#capacidade').val();
-        mantimento.ConteudoAtual = $('#conteudo').val();
+        mantimento.Conteudo = $('#conteudo').val();
         mantimento.Percentual = $('#percentual').val();
+        mantimento.TipoId = $('#tipo').val();
         $.ajax({
             type: "POST",
             url: "/mantimento/Add",
