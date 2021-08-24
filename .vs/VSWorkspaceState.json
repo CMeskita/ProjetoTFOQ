@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Models"
   ],
-  "SelectedNode": "\\ProjetoTfoq.sln",
+  "SelectedNode": "\\Models\\Tipo.cs",
   "PreviewInSolutionExplorer": false
 }
