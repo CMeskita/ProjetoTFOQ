@@ -11,7 +11,7 @@
     <div class="col-sm-6">
         <label>Tipo</label>
 
-        <input readonly type="text" id="marca" class="form-control" MaxLength="15" value="@Model.TipoNome"/>
+        <input readonly type="text" id="marca" class="form-control" MaxLength="15" value="@Model.Tipo.Nome"/>
 
     </div>
     <!-- Segunda Coluna-->
@@ -34,7 +34,7 @@
     <div class="col-sm-6">
         <label>Capaciade</label>
      
-        <input onchange="CalculaPercentual()" type="text" id="capacidade" class="form-control" MaxLength="15"  @Model.Capacidade />
+        <input onchange="CalculaPercentual()" type="text" id="capacidade" class="form-control" MaxLength="15" value="@Model.Capacidade" />
 
     </div>
 
@@ -45,7 +45,7 @@
     <!-- Primeira Coluna-->
     <div class="col-sm-6">
         <label>Conteúso Atual</label>
-        <input type="text" id="conteudo" class="form-control" MaxLength="15" value="@Model.ConteudoAtual" />
+        <input type="text" id="conteudo" class="form-control" MaxLength="15" value="@Model.Conteudo" />
     </div>
     <!-- Segunda Coluna-->
     <div class="col-sm-6">

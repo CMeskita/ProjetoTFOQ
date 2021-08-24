@@ -3,7 +3,7 @@
     ViewBag.Title = "Cadastro Mantimentos";
 }
 
-<h2>Alterar Cadastro de Mantimentos</h2>
+<h2>Cadastro de Mantimentos</h2>
 <!-- Primeira-->
 <div class="form-group row">
 
@@ -77,13 +77,13 @@
 <script>
     function Salvar() {
         var mantimento = new Object();
-        mantimento.TipoId = $('#iddoselect').val();
+        mantimento.TipoId = $('#tipo').val();
         mantimento.Marca = $('#marca').val();
         mantimento.Validade = $('#validade').val();
         mantimento.Capacidade = $('#capacidade').val();
         mantimento.Conteudo = $('#conteudo').val();
         mantimento.Percentual = $('#percentual').val();
-        mantimento.TipoId = $('#tipo').val();
+        
         $.ajax({
             type: "POST",
             url: "/mantimento/Add",
@@ -102,8 +102,8 @@
     {
         var capacidade = parseFloat($('#capacidade').val());
         var conteudoAtual = parseFloat($('#conteudo').val());
-        var percentual = ((conteudoAtual / capacidade) * 100);
-        $('#percentual').val(percentual);
+        var percentual = (100-(conteudoAtual / capacidade) * 100);
+        $('#percentual').val(parseFloat(percentual).toFixed(2));
 
     }
 </script>

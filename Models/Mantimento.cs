@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Web;
 
 namespace ProjetoTfoq.Models
 {
@@ -25,7 +22,7 @@ namespace ProjetoTfoq.Models
         [Column("conteudo")]
         public int Conteudo { get; set; }
         // [NotMapped]
-        public decimal Precentual => (Convert.ToDecimal(Conteudo) / Convert.ToDecimal(Capacidade)) * 100;
+        public decimal Precentual => decimal.Floor(100-(Convert.ToDecimal(Conteudo) / Convert.ToDecimal(Capacidade) * 100));
 
         public int TipoId { get; set; }
         public virtual Tipo Tipo { get; set; }
