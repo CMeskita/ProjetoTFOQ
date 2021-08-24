@@ -24,7 +24,7 @@
 
         <div class="form-check">
 
-            <input type="checkbox" id="repor" class="form-check-input "/>
+            <input type="checkbox" id="repor" class="form-check-input">
             <label class="form-check-label">Repor</label>
 
         </div>
@@ -33,7 +33,7 @@
 
         <div class="form-group row">
 
-            <button onclick="Salvar()" type="button" class="btn btn-primary">SalVar</button>
+            <button onclick="Salvar()" type="button" class="btn btn-primary">Salvar</button>
 
 
 
@@ -47,7 +47,9 @@
         var tipo = new Object();
             tipo.Nome = $('#nome').val();
             tipo.Tags = $('#tags').val();
-            $('#repor').prop('checked', true);
+            tipo.Repor= $("#repor").is(":checked") ? "true" : "false";
+
+
         $.ajax({
             type: "POST",
             url: "/tipo/Add",

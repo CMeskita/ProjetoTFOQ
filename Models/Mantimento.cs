@@ -27,7 +27,6 @@ namespace ProjetoTfoq.Models
         // [NotMapped]
         public decimal Precentual => (Convert.ToDecimal(Conteudo) / Convert.ToDecimal(Capacidade)) * 100;
 
-       
         public int TipoId { get; set; }
         public virtual Tipo Tipo { get; set; }
 
