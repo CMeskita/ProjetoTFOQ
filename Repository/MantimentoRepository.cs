@@ -40,5 +40,6 @@ namespace ProjetoTfoq.Repository
             banco.Mantimento.Remove(mantimento);
             banco.SaveChanges();
         }
+      
     }
 }

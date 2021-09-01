@@ -23,6 +23,7 @@ namespace ProjetoTfoq.Controllers
             ViewBag.Tipos = new TipoRepository().GetAll();
             return View();
         }
+     
         public ActionResult Alterar(int id)
         {
             Mantimento mantimento = repository.Get(id);
@@ -31,6 +32,11 @@ namespace ProjetoTfoq.Controllers
         public ActionResult Detalhes(int id)
         {
             Mantimento mantimento = repository.Get(id);
+            return View(mantimento);
+        }
+        public ActionResult Repor(int id)
+        {
+            List<Mantimento> mantimento = new MantimentoRepository().GetAll();
             return View(mantimento);
         }
         [HttpGet]

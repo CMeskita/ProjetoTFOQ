@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjetoTfoq.Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,8 @@ namespace ProjetoTfoq.Controllers
 {
     public class HomeController : Controller
     {
+        MantimentoRepository repository = new MantimentoRepository();
+
         public ActionResult Index()
         {
             return View();
@@ -26,5 +29,6 @@ namespace ProjetoTfoq.Controllers
 
             return View();
         }
+      
     }
 }

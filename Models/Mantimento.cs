@@ -24,6 +24,7 @@ namespace ProjetoTfoq.Models
         // [NotMapped]
         public decimal Precentual => decimal.Floor(100-(Convert.ToDecimal(Conteudo) / Convert.ToDecimal(Capacidade) * 100));
 
+        public string vencido => Validade < DateTime.Today();
         public int TipoId { get; set; }
         public virtual Tipo Tipo { get; set; }
 

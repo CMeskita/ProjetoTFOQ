@@ -140,6 +140,7 @@
     <Compile Include="Repository\Contexto.cs" />
     <Compile Include="Repository\MantimentoRepository.cs" />
     <Compile Include="Repository\TipoRepository.cs" />
+    <Compile Include="ViewModel\ViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -187,6 +188,7 @@
     <Content Include="Views\Mantimento\Cadastro.cshtml" />
     <Content Include="Views\Mantimento\Alterar.cshtml" />
     <Content Include="Views\Mantimento\Detalhes.cshtml" />
+    <Content Include="Views\Mantimento\Repor.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
