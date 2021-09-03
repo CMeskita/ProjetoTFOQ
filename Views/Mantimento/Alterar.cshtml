@@ -1,9 +1,9 @@
 ﻿@model ProjetoTfoq.Models.Mantimento
 @{
-    ViewBag.Title = "Alterar";
+    ViewBag.Title = "Alterar Mantimento";
 }
 
-<h2>Detalhes</h2>
+<h2>Alterar Mantimento</h2>
 <!-- Primeira-->
 <div class="form-group row">
 
@@ -32,7 +32,7 @@
     </div>
     <!-- Segunda Coluna-->
     <div class="col-sm-6">
-        <label>Capaciade</label>
+        <label>Capacidade</label>
      
         <input onchange="CalculaPercentual()" type="text" id="capacidade" class="form-control" MaxLength="15" value="@Model.Capacidade" />
 
@@ -44,33 +44,33 @@
 
     <!-- Primeira Coluna-->
     <div class="col-sm-6">
-        <label>Conteúso Atual</label>
+        <label>Conteúdo Atual</label>
         <input type="text" id="conteudo" class="form-control" MaxLength="15" value="@Model.Conteudo" />
     </div>
     <!-- Segunda Coluna-->
     <div class="col-sm-6">
         <label>Percentual</label>
-        <input type="text" id="percentual" class="form-control" MaxLength="15" value="@Model.Precentual"/>
+        <input type="text" id="percentual" class="form-control" MaxLength="15"/>
     </div>
 
 
 </div>
 
 <div class="form-group row">
+    <div class="col-sm-6">
+        <button onclick="Salvar()" type="button" class="btn btn-primary">SalVar</button>
 
-    <button onclick="Salvar()" type="button" class="btn btn-primary">SalVar</button>
+        <a href="/mantimento/index" class="btn btn-primary">Voltar</a>
 
-
-
-    <a href="/mantimento/index" class="btn btn-primary">Voltar</a>
-
+    </div>
 </div>
-<script>
+    <script>
     function Salvar() {
         var mantimento = new Object();
-        mantimento.Id= @Model.Id;
+        mantimento.Id = @Model.Id;
         mantimento.TipoId = $('#tipo').val();
         mantimento.Marca = $('#marca').val();
+        mantimento.capacidade = $('#capacidade').val();
         mantimento.Validade = $('#validade').val();
         mantimento.ConteudoAtual = $('#conteudo').val();
         mantimento.Percentual = $('#percentual').val();
@@ -78,7 +78,7 @@
         $.ajax({
             type: "POST",
             url: "/mantimento/update",
-            data: tipo,
+            data: mantimento,
             dataType: 'json',
             success: function (obj) {
                 alert(obj);
@@ -89,15 +89,15 @@
             }
         });
     }
-    function CalculaPercentual() {
-        var capacidade = parseFloat($('#capacidade').val());
-        var conteudoAtual = parseFloat($('#conteudo').val());
-        var percentual = ((conteudoAtual / capacidade) * 100);
-        $('#percentual').val(percentual);
+        function CalculaPercentual() {
+            var capacidade = parseFloat($('#capacidade').val());
+            var conteudoAtual = parseFloat($('#conteudo').val());
+            var percentual = (100 - (conteudoAtual / capacidade) * 100);
+            $('#percentual').val(parseFloat(percentual).toFixed(2));
 
-    }
+        }
 
-</script>
+    </script>
 
 
 

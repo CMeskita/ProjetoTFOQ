@@ -33,7 +33,7 @@
                 <td>@item.Conteudo</td>
                 <td>@item.Precentual.ToString(".")%</td>
                 <td><a href="/Mantimento/Detalhes/@item.Id" class="success"><i class="bi bi-arrow-down-left-square"></i></a></td>
-                <td><a href="/Mantimento/Alterar/@item.Id" class="danger"></a><i class="bi bi-pen"></i></td>
+                <td><a href="/Mantimento/Alterar/@item.Id" class="danger"><i class="bi bi-pen"></i></a></td>
 
                 <td><a onclick="Excluir(@item.Id)" class="btn "></a><i class="bi bi-trash"></i></td>
             </tr>
@@ -84,7 +84,7 @@
             <td>@item.Tipo.Nome</td>
             <td>@item.Marca</td>
             <td>@item.Precentual.ToString(".")%</td>
-            <td>@item.Validade.ToString("dd/MM/yyyy")</td>
+            <td>@item.Validade</td>
             <td>@item.Validade</td>
 
         </tr>

@@ -10,7 +10,7 @@ namespace ProjetoTfoq.Models
     [Table("Tipo")]
     public class Tipo
     {//Criando Entidades no banco 1° Passo
-       
+        [Key]
 
         public int Id { get; set; }
 
