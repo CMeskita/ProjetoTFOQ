@@ -19,6 +19,8 @@ namespace ProjetoTfoq.Repository
 
         public DbSet<Mantimento> Mantimento { get; set; }
 
+        public DbSet<Usuario> Usuario { get; set; }
+
 
     }
 }
