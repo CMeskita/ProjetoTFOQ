@@ -1,11 +1,11 @@
 # Web-Mantimento
-Ta Faltando o quê(Sistema Teste):
-Sistema simmples de Gerenciamento de Mantimentos do lar
-Sistema Test 
+Ta Faltando o quê?(Sistema Teste):
+Sistema simples de Gerenciamento de Mantimentos do lar
+### Sistema Teste 
 principais  pontos a serem explorados
 - Planejamemto : Inventarios do Mantimentos , lista de compras  e itens que precisam adquirir 
 -  Armazenamento: Indicar Locais Adequados  e  como podem ser Armazemados determinados alimentos
--  Orrganização : Separa Por Categoria como grãos,enlatados,temperos, lanches,etc...
+-  Organização : Separar Por Categoria como grãos,enlatados,temperos, lanches,etc...
 -  Controle de Validade Verificar regularmente o vencimento de cada mantimento
   ## Tecnologia
   - Banco de Dados Sql Server
