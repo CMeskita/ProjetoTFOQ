@@ -11,7 +11,7 @@ principais  pontos a serem explorados
   - Banco de Dados Sql Server
   - EntityFramework
   - DotNet 3.0
-  - C#
+  - C# e js
   - MVC
 
     ![image](https://github.com/CMeskita/Web-Mantimento/assets/30234377/67ec3d3a-07f5-4808-a4a8-10bec1df917f)
